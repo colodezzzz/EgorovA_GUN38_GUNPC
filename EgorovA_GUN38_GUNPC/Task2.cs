@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Security.Cryptography;
 
 namespace EgorovA_GUN38_GUNPC
 {
-    class Program
+    class Task2
     {
         static void Main(string[] args)
         {

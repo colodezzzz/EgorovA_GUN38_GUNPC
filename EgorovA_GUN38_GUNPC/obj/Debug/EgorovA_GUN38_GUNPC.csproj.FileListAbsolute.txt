@@ -1,0 +1,7 @@
+E:\VS projects\EgorovA_GUN38_GUNPC\EgorovA_GUN38_GUNPC\bin\Debug\EgorovA_GUN38_GUNPC.exe.config
+E:\VS projects\EgorovA_GUN38_GUNPC\EgorovA_GUN38_GUNPC\bin\Debug\EgorovA_GUN38_GUNPC.exe
+E:\VS projects\EgorovA_GUN38_GUNPC\EgorovA_GUN38_GUNPC\bin\Debug\EgorovA_GUN38_GUNPC.pdb
+E:\VS projects\EgorovA_GUN38_GUNPC\EgorovA_GUN38_GUNPC\obj\Debug\EgorovA_GUN38_GUNPC.csproj.AssemblyReference.cache
+E:\VS projects\EgorovA_GUN38_GUNPC\EgorovA_GUN38_GUNPC\obj\Debug\EgorovA_GUN38_GUNPC.csproj.CoreCompileInputs.cache
+E:\VS projects\EgorovA_GUN38_GUNPC\EgorovA_GUN38_GUNPC\obj\Debug\EgorovA_GUN38_GUNPC.exe
+E:\VS projects\EgorovA_GUN38_GUNPC\EgorovA_GUN38_GUNPC\obj\Debug\EgorovA_GUN38_GUNPC.pdb
