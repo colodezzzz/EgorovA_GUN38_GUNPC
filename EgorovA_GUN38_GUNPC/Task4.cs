@@ -1,15 +1,8 @@
-﻿using System;
-
-namespace EgorovA_GUN38_GUNPC
+﻿
+namespace EgorovA_GUN38_GUNPC.Task4
 {
-    class Program
+    class Task4
     {
-        static void Main(string[] args)
-        {
-            
-
-            Console.ReadKey();
-        }
     }
 
     class Unit
