@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{C4721A6B-4B59-4141-B935-F4567DBCE464}|EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC.csproj|e:\\vs projects\\egorova_gun38_gunpc\\egorova_gun38_gunpc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4721A6B-4B59-4141-B935-F4567DBCE464}|EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC.csproj|solutionrelative:egorova_gun38_gunpc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4721A6B-4B59-4141-B935-F4567DBCE464}|EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC.csproj|e:\\vs projects\\egorova_gun38_gunpc\\egorova_gun38_gunpc\\task2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4721A6B-4B59-4141-B935-F4567DBCE464}|EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC.csproj|solutionrelative:egorova_gun38_gunpc\\task2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4721A6B-4B59-4141-B935-F4567DBCE464}|EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC.csproj|e:\\vs projects\\egorova_gun38_gunpc\\egorova_gun38_gunpc\\task3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4721A6B-4B59-4141-B935-F4567DBCE464}|EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC.csproj|solutionrelative:egorova_gun38_gunpc\\task3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 175,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Task3.cs",
+              "DocumentMoniker": "E:\\VS projects\\EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC\\Task3.cs",
+              "RelativeDocumentMoniker": "EgorovA_GUN38_GUNPC\\Task3.cs",
+              "ToolTip": "E:\\VS projects\\EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC\\Task3.cs",
+              "RelativeToolTip": "EgorovA_GUN38_GUNPC\\Task3.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T08:50:31.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Task2.cs",
+              "DocumentMoniker": "E:\\VS projects\\EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC\\Task2.cs",
+              "RelativeDocumentMoniker": "EgorovA_GUN38_GUNPC\\Task2.cs",
+              "ToolTip": "E:\\VS projects\\EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC\\Task2.cs",
+              "RelativeToolTip": "EgorovA_GUN38_GUNPC\\Task2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T08:50:38.64Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "EgorovA_GUN38_GUNPC\\Program.cs",
               "ToolTip": "E:\\VS projects\\EgorovA_GUN38_GUNPC\\EgorovA_GUN38_GUNPC\\Program.cs*",
               "RelativeToolTip": "EgorovA_GUN38_GUNPC\\Program.cs*",
-              "ViewState": "AgIAACEAAAAAAAAAAADwvzIAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-21T09:04:33.526Z",
               "EditorCaption": ""

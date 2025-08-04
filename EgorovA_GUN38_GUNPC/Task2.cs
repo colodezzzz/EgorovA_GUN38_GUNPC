@@ -4,7 +4,7 @@ namespace EgorovA_GUN38_GUNPC
 {
     class Task2
     {
-        static void Main(string[] args)
+        static void Func(string[] args)
         {
             // Задача А
             // Задание 1
