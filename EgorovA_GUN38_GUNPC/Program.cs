@@ -14,10 +14,12 @@ namespace EgorovA_GUN38_GUNPC
 
     class Unit
     {
-        public string Name { get; private set; }
-        public float Health { get; private set; }
+        public readonly string Name;
+        public float Health => _health;
         public int Damage { get; private set; } = 5;
         public float Armor { get; private set; } = 0.6f;
+
+        private float _health;
 
         public Unit() : this("Unknown") { }
 
@@ -28,14 +30,14 @@ namespace EgorovA_GUN38_GUNPC
 
         public float GetReaHealth()
         {
-            return Health * (1f + Armor);
+            return _health * (1f + Armor);
         }
 
         public bool SetDamage(float damage)
         {
-            Health = Health - damage * Armor;
+            _health = _health - damage * Armor;
 
-            return Health <= 0f;
+            return _health <= 0f;
         }
     }
 }
