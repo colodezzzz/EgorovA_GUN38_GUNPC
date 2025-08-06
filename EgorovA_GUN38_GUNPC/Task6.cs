@@ -12,7 +12,7 @@ namespace EgorovA_GUN38_GUNPC.Task6
             Console.Write("\nEnter 'exit' to stop, another text to continue: ");
             string userInput = Console.ReadLine();
 
-            if (userInput == "exit")
+            if (userInput.ToLower() == "exit")
             {
                 Console.WriteLine("Program has finished.");
                 return true;
