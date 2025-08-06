@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Security.Permissions;
 using EgorovA_GUN38_GUNPC.Task5;
 
@@ -76,13 +77,20 @@ namespace EgorovA_GUN38_GUNPC.Task6
                 Console.Write("Enter a student second name: ");
                 secondName = Console.ReadLine();
 
-                Console.Write($"Enter {secondName}'s mark: ");
-
-                if (int.TryParse(Console.ReadLine(), out mark))
+                if (students.TryGetValue(secondName, out _) == false)
                 {
-                    if (mark >= 2 && mark <= 5)
+                    Console.Write($"Enter {secondName}'s mark: ");
+
+                    if (int.TryParse(Console.ReadLine(), out mark))
                     {
-                        students.Add(secondName, mark);
+                        if (mark >= 2 && mark <= 5)
+                        {
+                            students.Add(secondName, mark);
+                        }
+                        else
+                        {
+                            PrintMarkError();
+                        }
                     }
                     else
                     {
@@ -91,7 +99,7 @@ namespace EgorovA_GUN38_GUNPC.Task6
                 }
                 else
                 {
-                    PrintMarkError();
+                    DebugMessage.PrintErrorMessage("Can't add student! Such a student already exists!");
                 }
 
                 Console.Write("Enter a student second name to find his mark: ");
@@ -125,46 +133,203 @@ namespace EgorovA_GUN38_GUNPC.Task6
     {
         class Node
         {
-            public int Value;
-            public Node Next;
-            public Node Prev;
+            public int Value = 0;
+            public Node Next = null;
+            public Node Prev = null;
+        }
+
+        public class OwnList
+        {
+            private int _size = 0;
+            private Node _firstNode = null;
+
+            public OwnList()
+            {
+
+            }
+
+            public OwnList(int size)
+            {
+                if (size < 0)
+                {
+                    DebugMessage.PrintErrorMessage("Incorrect size! Size must be greater then 0!");
+                }
+
+                if (size == 0)
+                {
+                    return;
+                }
+
+                _size = size;
+                _firstNode = new Node();
+                Node node = _firstNode;
+
+                int i = 0;
+
+                while (i < size-1)
+                {
+                    node.Next = new Node() { Prev = node };
+                    node = node.Next;
+                    i++;
+                }
+            }
+
+            public void Add(int value)
+            {
+                if (_firstNode == null)
+                {
+                    _firstNode = new Node() { Value = value};
+                    _size = 1;
+                    return;
+                }
+
+                Node node = _firstNode;
+
+                while (node.Next != null)
+                {
+                    node = node.Next;
+                }
+
+                node.Next = new Node() { Value = value, Prev = node };
+                _size++;
+            }
+
+            public int Get(int index)
+            {
+                Node node = GetNode(index);
+
+                if (node != null)
+                {
+                    return node.Value;
+                }
+
+                PrintIndexError();
+                return -1;
+            }
+
+            public void Set(int index, int value)
+            {
+                Node node = GetNode(index);
+
+                if (node != null)
+                {
+                    node.Value = value;
+                }
+                else
+                {
+                    PrintIndexError();
+                }
+            }
+
+            public void PrintStraightList()
+            {
+                Node node = _firstNode;
+
+                while (node != null)
+                {
+                    Console.Write($"{node.Value} ");
+                    node = node.Next;
+                }
+
+                Console.WriteLine();
+            }
+
+            public void PrintReversedList()
+            {
+                Node node = GetNode(-1);
+
+                while (node != null)
+                {
+                    Console.Write($"{node.Value} ");
+                    node = node.Prev;
+                }
+
+                Console.WriteLine();
+            }
+
+            private Node GetNode(int index)
+            {
+                if (IsIndexCorrect(index, out index))
+                {
+                    int i = 0;
+                    Node node = _firstNode;
+
+                    while (i < index)
+                    {
+                        node = node.Next;
+                        i++;
+                    }
+
+                    return node;
+                }
+
+                return null;
+            }
+
+            private void PrintIndexError()
+            {
+                DebugMessage.PrintErrorMessage("Incorrect index! Index can't be greater than size - 1 or less than -size!");
+            }
+
+            private bool IsIndexCorrect(int index, out int correctIndex)
+            {
+                correctIndex = index;
+
+                if (correctIndex < 0)
+                {
+                    correctIndex = _size + correctIndex;
+                }
+
+                if (_size < 0 || correctIndex > _size - 1)
+                {
+                    return false;
+                }
+
+                return true;
+            }
         }
 
         public void TaskLoop()
         {
-            Node node1, node2, node3, node;
+            OwnList nodes;
 
+            int size;
             bool isWorking = true;
 
             while (isWorking)
             {
-                Console.WriteLine("Enter 3 integeres:");
+                Console.WriteLine("Enter a list size (3-6): ");
 
-                node1 = new Node() { Value = int.Parse(Console.ReadLine()), Prev = null };
-
-                node2 = new Node() { Value = int.Parse(Console.ReadLine()), Prev = node1 };
-                node1.Next = node2;
-
-                node3 = new Node() { Value = int.Parse(Console.ReadLine()), Prev = node2, Next = null };
-                node2.Next = node3;
-
-                Console.WriteLine("\nStraight order:");
-                node = node1;
-
-                do
+                if (int.TryParse(Console.ReadLine(), out size) && size >= 3 && size <= 6)
                 {
-                    Console.WriteLine(node.Value);
-                    node = node.Next;
-                } while (node != null);
+                    nodes = new OwnList();
 
-                Console.WriteLine("\nReversed order:");
-                node = node3;
+                    int i = 0;
 
-                do
+                    Console.WriteLine($"Enter an {size} integers:");
+
+                    while (i < size)
+                    {
+                        if (int.TryParse(Console.ReadLine(), out int value))
+                        {
+                            nodes.Add(value);
+                        }
+                        else
+                        {
+                            nodes.Add(0);
+                            DebugMessage.PrintWarningMessage("Input is incorrect. The value is set to default (0).");
+                        }
+
+                        i++;
+                    }
+
+                    nodes.PrintStraightList();
+                    nodes.PrintReversedList();
+                }
+                else
                 {
-                    Console.WriteLine(node.Value);
-                    node = node.Prev;
-                } while (node != null);
+                    DebugMessage.PrintErrorMessage("Size is incorrect!");
+                }
 
                 isWorking = Task6.CanExit() == false;
             }
