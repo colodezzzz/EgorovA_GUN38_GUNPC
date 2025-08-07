@@ -142,6 +142,7 @@ namespace EgorovA_GUN38_GUNPC.Task6
         {
             private int _size = 0;
             private Node _firstNode = null;
+            private Node _lastNode = null;
 
             public OwnList()
             {
@@ -179,18 +180,13 @@ namespace EgorovA_GUN38_GUNPC.Task6
                 if (_firstNode == null)
                 {
                     _firstNode = new Node() { Value = value};
+                    _lastNode = _firstNode;
                     _size = 1;
                     return;
                 }
 
-                Node node = _firstNode;
-
-                while (node.Next != null)
-                {
-                    node = node.Next;
-                }
-
-                node.Next = new Node() { Value = value, Prev = node };
+                _lastNode.Next = new Node() { Value = value, Prev = _lastNode };
+                _lastNode = _lastNode.Next;
                 _size++;
             }
 
@@ -251,13 +247,30 @@ namespace EgorovA_GUN38_GUNPC.Task6
             {
                 if (IsIndexCorrect(index, out index))
                 {
-                    int i = 0;
-                    Node node = _firstNode;
+                    Node node = null;
+                    int i;
 
-                    while (i < index)
+                    if (index >= _size / 2)
                     {
-                        node = node.Next;
-                        i++;
+                        i = _size - 1;
+                        node = _lastNode;
+
+                        while (i > index)
+                        {
+                            node = node.Prev;
+                            i--;
+                        }
+                    }
+                    else
+                    {
+                        i = 0;
+                        node = _firstNode;
+
+                        while (i < index)
+                        {
+                            node = node.Next;
+                            i++;
+                        }
                     }
 
                     return node;
