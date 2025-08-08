@@ -1,5 +1,5 @@
 ﻿using System;
-using EgorovA_GUN38_GUNPC.Task6;
+using EgorovA_GUN38_GUNPC.Task7;
 
 namespace EgorovA_GUN38_GUNPC
 {
@@ -7,14 +7,23 @@ namespace EgorovA_GUN38_GUNPC
     {
         static void Main(string[] args)
         {
-            One one = new One();
-            one.TaskLoop();
+            // 1
+            Console.WriteLine(Methods.ConcatenateStrings("Hello", " World"));
 
-            Two two = new Two();
-            two.TaskLoop();
+            // 2
+            Console.WriteLine(Methods.GreetUser("Oleg", 22));
 
-            Three three = new Three();
-            three.TaskLoop();
+            // 3
+            Console.WriteLine(Methods.GetStringInfo("Hello World"));
+
+            // 4
+            Console.WriteLine(Methods.GetFirstFiveChars("Hello World"));
+
+            // 5
+            Console.WriteLine(Methods.MakeSentence(new string[] { "Hello", " World" }));
+
+            // 6
+            Console.WriteLine(Methods.Replace("Hello World", "Hell", "Heaven"));
 
             Console.ReadKey();
         }

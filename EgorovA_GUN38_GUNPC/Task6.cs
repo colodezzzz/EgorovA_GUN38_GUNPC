@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Security.Permissions;
-using EgorovA_GUN38_GUNPC.Task5;
+using EgorovA_GUN38_GUNPC.DebugMessages;
 
 namespace EgorovA_GUN38_GUNPC.Task6
 {
@@ -153,7 +151,7 @@ namespace EgorovA_GUN38_GUNPC.Task6
             {
                 if (size < 0)
                 {
-                    DebugMessage.PrintErrorMessage("Incorrect size! Size must be greater then 0!");
+                    DebugMessages.DebugMessage.PrintErrorMessage("Incorrect size! Size must be greater then 0!");
                 }
 
                 if (size == 0)
